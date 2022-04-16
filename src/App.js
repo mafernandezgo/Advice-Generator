@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import { useEffect, useState } from "react"
 
 function App() {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.slip)
+      })
+  }, [])
+
+  console.log(data)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-Wrapper">
+        <h1 className="Advice-ID"> ADVICE #{data.id} </h1>
+        <p className="Advice">" {data.advice} " </p>
+        <picture>
+          <source
+            media="(max-width:800px)"
+            srcSet={
+              process.env.PUBLIC_URL + "/images/pattern-divider-mobile.svg"
+            }
+          ></source>
+          <img
+            alt="divider"
+            src={process.env.PUBLIC_URL + "/images/pattern-divider-desktop.svg"}
+          />
+        </picture>
+        <button onClick={() => window.location.reload(false)}>
+          <img src={process.env.PUBLIC_URL + "/images/icon-dice.svg"} />
+        </button>
+      </section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

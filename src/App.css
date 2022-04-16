@@ -1,38 +1,55 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  background-color: hsl(218, 23%, 16%);
+  display: flex;
+  font-family: "Manrope", sans-serif;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.App-Wrapper {
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 1em;
+  height: max-content;
+  max-width: 30%;
+  min-width: 450px;
+  padding: 4em;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Advice-ID {
+  color: hsl(150, 100%, 66%);
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+.Advice {
+  color: hsl(193, 38%, 86%);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.App button {
+  align-self: stretch;
+  background-color: hsl(150, 100%, 66%);
+  border-radius: 50%;
+  border: none;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  left: 50%;
+  padding: 1em;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  transition: all 0.42s ease;
+}
+
+.App button:hover {
+  box-shadow: 1px 1px 10px 10px hsl(150, 100%, 66%);
+}
+
+.App button:active {
+  transform: translate(-50%, 50%) rotate(360deg);
 }

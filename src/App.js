@@ -11,7 +11,6 @@ function App() {
       })
   }, [])
 
-  console.log(data)
   return (
     <div className="App">
       <section className="App-Wrapper">

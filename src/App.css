@@ -53,3 +53,12 @@
 .App button:active {
   transform: translate(-50%, 50%) rotate(360deg);
 }
+
+@media (max-width: 800px) {
+  .App-Wrapper {
+    max-width: 95%;
+    min-width: auto;
+    padding: 4em 1em;
+    margin: 10px;
+  }
+}
